@@ -2,76 +2,64 @@
 <html lang="en">
 
 <head>
-  <title>LAMINAX SYSTEM</title>
-  <meta property="og:title" content="LAMINAX SYSTEM" />
-  <meta property="og:image" content="public/icon_pack_20240213111330.png" />
-  <meta charset="utf-8" />
-  <style data-tag="default-style-sheet">
-    html {
-      font-family: Inter;
-      font-size: 16px;
-      color: white;
-    }
+    <title>LAMINAX SYSTEM</title>
+    <meta property="og:title" content="LAMINAX SYSTEM" />
+    <meta property="og:image" content="public/icon_pack_20240213111330.png" />
+    <meta charset="utf-8" />
+    <style data-tag="default-style-sheet">
+        html {
+            font-family: Inter;
+            font-size: 16px;
+            color: white;
+        }
 
-    body {
-      font-weight: 400;
-      font-style: normal;
-      letter-spacing: normal;
-      line-height: 1.15;
-      background-color: #000000;
-      text-align: center;
-    }
-  </style>
-  <link rel="shortcut icon" href="public/favicon.ico" type="icon/png" sizes="32x32" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-    data-tag="font" />
-  <link rel="stylesheet" href="index.css" />
+        body {
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: 1.15;
+            background-color: #000000;
+            text-align: center;
+        }
+    </style>
+    <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon" sizes="32x32" />
+    <link rel="stylesheet" href="https://googleapis.com" data-tag="font" />
+    <link rel="stylesheet" href="index.css" />
 </head>
 
 <body>
-  <div>
-    <div class="home-container">
-      <img alt="image" src="public/SilverLogo.png" loading="eager" class="home-image" />
-      <div class="home-container1">
-        <span class="home-text">
-          <span class="home-text1">LAMINAX CORPORATION INTERNAL ACCESS</span>
-          <br class="home-text2" />
-          <span class="home-text3">
-            PLEASE ENTER ADMINISTRATOR CREDENTIALS
-          </span>
-        </span>
-      </div>
-      <br style="margin:100px">
-      <div class="home-container2">
+    <div>
+        <div class="home-container">
+            <img alt="image" src="public/SilverLogo.png" loading="eager" class="home-image" />
+            <div class="home-container1">
+                <span class="home-text">
+                    <span class="home-text1">LAMINAX CORPORATION INTERNAL ACCESS</span>
+                    <br class="home-text2" />
+                    <span class="home-text3">PLEASE ENTER ADMINISTRATOR CREDENTIALS</span>
+                </span>
+            </div>
+        </div>
+        <br style="margin:100px;">
+        <div class="home-container2">
+            <input type="password" id="pw" placeholder="••••">
+            <button onclick="submitPassword()">CHECK</button>
 
-        <body>
-          <input type="password" id="pw">
-          <button onclick="submitPassword()">CHECK</button>
+            <script>
+                function submitPassword() {
+                    const password = document.getElementById("pw").value;
 
-          <script>
-            async function submitPassword() {
-              const password = document.getElementById("pw").value;
-              try {
-                const res = await fetch("https://worker.laminax.org/check-password", {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify({ password })
-                });
-                const result = await res.json();
-
-                if (res.ok && result.redirect) {
-                  window.location.href = result.redirect;
-                } else {
-                  alert("INCORRECT CODE");
+                    
+                    if (password === "BREACH" || password === "CHAD" || password === "GHOST_FOX") {
+                        
+                        window.location.href = "secret-lore.html";
+                    } else {
+                        
+                        alert("INCORRECT CODE");
+                    }
                 }
-              } catch (e) {
-                console.error("Fetch failed:", e);
-                alert("ERROR");
-              }
-            }
-          </script>
-      </div>
+            </script>
+        </div>
+    </div>
 </body>
 
 </html>
