@@ -49,9 +49,12 @@
                     const password = document.getElementById("pw").value;
 
                     
-                    if (password === "BREACH" || password === "CHAD" || password === "GHOST_FOX") {
-                        
+                    if (password === "GHOST_FOX") {
                         window.location.href = "secret-lore.html";
+                    } else if (password === "BREACH") {
+                        window.location.href = "breach-logs.html";
+                    } else if (password === "CHAD") {
+                        window.location.href = "chad-profile.html";
                     } else {
                         
                         alert("INCORRECT CODE");
